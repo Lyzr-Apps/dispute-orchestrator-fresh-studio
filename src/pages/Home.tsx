@@ -277,7 +277,7 @@ export default function Home() {
         // Add agent response to chat
         const agentMessage: ChatMessage = {
           role: 'agent',
-          content: agentResponse.message || 'Thank you for that information. Is there anything else you'd like to add about this dispute?',
+          content: agentResponse.message || "Thank you for that information. Is there anything else you'd like to add about this dispute?",
           timestamp: new Date()
         }
         setMessages(prev => [...prev, agentMessage])
