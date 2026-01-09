@@ -1,0 +1,60 @@
+{
+  "workflow_name": "Credit Card Dispute Analysis Management System",
+  "created_at": "2026-01-09T00:00:00Z",
+  "agents": [
+    {
+      "agent_id": "696147c7c57d451439d4cd48",
+      "name": "Customer Conversation Agent",
+      "type": "independent",
+      "status": "created",
+      "schema_saved": true
+    },
+    {
+      "agent_id": "696147dfd09b552363344543",
+      "name": "SQL Query Agent",
+      "type": "sub-agent",
+      "status": "created",
+      "schema_saved": true
+    },
+    {
+      "agent_id": "696147f4d09b552363344544",
+      "name": "SOP Compliance Agent",
+      "type": "sub-agent",
+      "status": "created",
+      "schema_saved": true
+    },
+    {
+      "agent_id": "6961480bd09b552363344546",
+      "name": "Decision Synthesis Agent",
+      "type": "sub-agent",
+      "status": "created",
+      "schema_saved": true
+    },
+    {
+      "agent_id": "69614825d09b55236334454c",
+      "name": "Customer Resolution Agent",
+      "type": "independent",
+      "status": "created",
+      "schema_saved": true
+    },
+    {
+      "agent_id": "69614847d09b55236334454d",
+      "name": "Dispute Analysis Orchestrator",
+      "type": "manager",
+      "status": "created",
+      "schema_saved": true,
+      "managed_agents": [
+        "696147dfd09b552363344543",
+        "696147f4d09b552363344544",
+        "6961480bd09b552363344546"
+      ]
+    }
+  ],
+  "workflow_structure": {
+    "nodes": 8,
+    "edges": 7,
+    "manager_subagent_count": 1,
+    "independent_agent_count": 2,
+    "total_agents": 6
+  }
+}

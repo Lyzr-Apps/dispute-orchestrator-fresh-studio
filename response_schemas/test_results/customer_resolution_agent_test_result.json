@@ -1,0 +1,47 @@
+{
+  "agent_name": "Customer Resolution Agent",
+  "agent_id": "69614825d09b55236334454c",
+  "test_message": "Present approval decision: dispute approved, full refund of $247.99, unauthorized transaction confirmed, credited within 3-5 business days",
+  "expected_purpose": "assistant",
+  "timestamp": "2026-01-09T18:28:50.533806",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "decision_summary": "Your dispute has been approved, and you will receive a full refund of $247.99.",
+      "detailed_explanation": "After carefully reviewing your case, we have confirmed that the transaction in question was unauthorized. For your protection, a full refund of $247.99 will be credited back to your original payment method. We understand situations like these can be stressful, and we appreciate your patience throughout this process.",
+      "decision_type": "approved",
+      "resolution_amount": 247.99,
+      "policy_references": [
+        {
+          "policy_name": "Unauthorized Transaction Protection",
+          "customer_friendly_explanation": "Our policy ensures you are not responsible for charges you did not authorize. Once we verify a transaction is unauthorized, a full refund is granted."
+        }
+      ],
+      "next_steps": [
+        {
+          "step_number": 1,
+          "action": "Monitor your payment account for the refund, which will appear as a credit of $247.99.",
+          "timeline": "Within 3-5 business days"
+        }
+      ],
+      "appeal_options": {
+        "can_appeal": false,
+        "appeal_deadline": null,
+        "appeal_instructions": null
+      },
+      "contact_info": {
+        "support_phone": "1-800-555-1234",
+        "support_email": "support@example.com",
+        "hours": "Mon-Fri 8:00 AM - 8:00 PM EST"
+      },
+      "estimated_resolution_date": "Within 5 business days"
+    },
+    "metadata": {
+      "agent_name": "Customer Resolution Agent",
+      "timestamp": "2024-06-14T12:00:00Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"decision_summary\": \"Your dispute has been approved, and you will receive a full refund of $247.99.\",\n    \"detailed_explanation\": \"After carefully reviewing your case, we have confirmed that the transaction in question was unauthorized. For your protection, a full refund of $247.99 will be credited back to your original payment method. We understand situations like these can be stressful, and we appreciate your patience throughout this process.\",\n    \"decision_type\": \"approved\",\n    \"resolution_amount\": 247.99,\n    \"policy_references\": [\n      {\n        \"policy_name\": \"Unauthorized Transaction Protection\",\n        \"customer_friendly_explanation\": \"Our policy ensures you are not responsible for charges you did not authorize. Once we verify a transaction is unauthorized, a full refund is granted.\"\n      }\n    ],\n    \"next_steps\": [\n      {\n        \"step_number\": 1,\n        \"action\": \"Monitor your payment account for the refund, which will appear as a credit of $247.99.\",\n        \"timeline\": \"Within 3-5 business days\"\n      }\n    ],\n    \"appeal_options\": {\n      \"can_appeal\": false,\n      \"appeal_deadline\": null,\n      \"appeal_instructions\": null\n    },\n    \"contact_info\": {\n      \"support_phone\": \"1-800-555-1234\",\n      \"support_email\": \"support@example.com\",\n      \"hours\": \"Mon-Fri 8:00 AM - 8:00 PM EST\"\n    },\n    \"estimated_resolution_date\": \"Within 5 business days\"\n  },\n  \"metadata\": {\n    \"agent_name\": \"Customer Resolution Agent\",\n    \"timestamp\": \"2024-06-14T12:00:00Z\"\n  }\n}"
+}

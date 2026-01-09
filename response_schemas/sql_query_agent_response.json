@@ -1,0 +1,91 @@
+{
+  "agent_name": "SQL Query Agent",
+  "agent_id": "696147dfd09b552363344543",
+  "agent_purpose": "parser",
+  "description": "Converts case details into SQL queries and retrieves transaction data",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "disputed_transaction": {
+        "transaction_id": "string",
+        "date": "string",
+        "amount": "number",
+        "merchant": "string",
+        "category": "string",
+        "status": "string"
+      },
+      "related_transactions": [
+        "any"
+      ],
+      "account_history": {
+        "account_age_days": "number",
+        "total_transactions": "number",
+        "average_monthly_spend": "number",
+        "previous_disputes": "number"
+      },
+      "queries_executed": [
+        "any"
+      ],
+      "data_summary": "string"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "error",
+    "result": {
+      "disputed_transaction": {
+        "transaction_id": "",
+        "date": "",
+        "amount": 0,
+        "merchant": "",
+        "category": "",
+        "status": ""
+      },
+      "related_transactions": [],
+      "account_history": {
+        "account_age_days": 0,
+        "total_transactions": 0,
+        "average_monthly_spend": 0,
+        "previous_disputes": 0
+      },
+      "queries_executed": [],
+      "data_summary": "No case details or transaction data provided. Unable to perform SQL query or generate results."
+    },
+    "metadata": {
+      "agent_name": "SQL Query Agent",
+      "timestamp": "2024-06-15T18:50:00Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-01-09T18:30:28.680030",
+  "test_message_used": "Parse this sample text for testing",
+  "actual_test_response": {
+    "status": "error",
+    "result": {
+      "disputed_transaction": {
+        "transaction_id": "",
+        "date": "",
+        "amount": 0,
+        "merchant": "",
+        "category": "",
+        "status": ""
+      },
+      "related_transactions": [],
+      "account_history": {
+        "account_age_days": 0,
+        "total_transactions": 0,
+        "average_monthly_spend": 0,
+        "previous_disputes": 0
+      },
+      "queries_executed": [],
+      "data_summary": "No case details or transaction data provided. Unable to perform SQL query or generate results."
+    },
+    "metadata": {
+      "agent_name": "SQL Query Agent",
+      "timestamp": "2024-06-15T18:50:00Z"
+    }
+  }
+}

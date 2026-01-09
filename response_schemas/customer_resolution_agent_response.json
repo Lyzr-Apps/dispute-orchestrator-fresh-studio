@@ -1,0 +1,130 @@
+{
+  "agent_name": "Customer Resolution Agent",
+  "agent_id": "69614825d09b55236334454c",
+  "agent_purpose": "assistant",
+  "description": "Presents final decision in clear, empathetic language to customers",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "decision_summary": "string",
+      "detailed_explanation": "string",
+      "decision_type": "string",
+      "resolution_amount": "null",
+      "policy_references": [
+        {
+          "policy_name": "string",
+          "customer_friendly_explanation": "string"
+        }
+      ],
+      "next_steps": [
+        {
+          "step_number": "number",
+          "action": "string",
+          "timeline": "string"
+        }
+      ],
+      "appeal_options": {
+        "can_appeal": "boolean",
+        "appeal_deadline": "string",
+        "appeal_instructions": "string"
+      },
+      "contact_info": {
+        "support_phone": "string",
+        "support_email": "string",
+        "hours": "string"
+      },
+      "estimated_resolution_date": "null"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "decision_summary": "We have carefully reviewed your dispute and, unfortunately, are unable to approve your request at this time.",
+      "detailed_explanation": "We understand how important this matter is to you. After thoroughly examining the details you provided and reviewing the relevant documentation, we determined that your claim does not meet the eligibility criteria for a refund under our current policy. Specifically, the issue raised does not fall within the types of incidents that are covered.",
+      "decision_type": "denied",
+      "resolution_amount": null,
+      "policy_references": [
+        {
+          "policy_name": "Refund and Dispute Policy",
+          "customer_friendly_explanation": "Our policy covers refunds in cases where products are defective or services were not delivered as described. Disputes related to buyer's remorse or change of mind are not eligible for refunds."
+        }
+      ],
+      "next_steps": [
+        {
+          "step_number": 1,
+          "action": "Review the denial details provided above and gather any additional evidence if you feel your case qualifies.",
+          "timeline": "As soon as possible"
+        },
+        {
+          "step_number": 2,
+          "action": "If you wish to appeal this decision, follow the appeal instructions below.",
+          "timeline": "Within 14 days of this decision"
+        }
+      ],
+      "appeal_options": {
+        "can_appeal": true,
+        "appeal_deadline": "2024-07-12",
+        "appeal_instructions": "You may appeal by submitting a written request to our support team, including any new information or supporting documents you believe may impact the decision."
+      },
+      "contact_info": {
+        "support_phone": "1-800-555-1234",
+        "support_email": "support@example.com",
+        "hours": "Mon-Fri 8am-6pm EST"
+      },
+      "estimated_resolution_date": null
+    },
+    "metadata": {
+      "agent_name": "Customer Resolution Agent",
+      "timestamp": "2024-06-28T12:00:00Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-01-09T18:30:52.024597",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "decision_summary": "We have carefully reviewed your dispute and, unfortunately, are unable to approve your request at this time.",
+      "detailed_explanation": "We understand how important this matter is to you. After thoroughly examining the details you provided and reviewing the relevant documentation, we determined that your claim does not meet the eligibility criteria for a refund under our current policy. Specifically, the issue raised does not fall within the types of incidents that are covered.",
+      "decision_type": "denied",
+      "resolution_amount": null,
+      "policy_references": [
+        {
+          "policy_name": "Refund and Dispute Policy",
+          "customer_friendly_explanation": "Our policy covers refunds in cases where products are defective or services were not delivered as described. Disputes related to buyer's remorse or change of mind are not eligible for refunds."
+        }
+      ],
+      "next_steps": [
+        {
+          "step_number": 1,
+          "action": "Review the denial details provided above and gather any additional evidence if you feel your case qualifies.",
+          "timeline": "As soon as possible"
+        },
+        {
+          "step_number": 2,
+          "action": "If you wish to appeal this decision, follow the appeal instructions below.",
+          "timeline": "Within 14 days of this decision"
+        }
+      ],
+      "appeal_options": {
+        "can_appeal": true,
+        "appeal_deadline": "2024-07-12",
+        "appeal_instructions": "You may appeal by submitting a written request to our support team, including any new information or supporting documents you believe may impact the decision."
+      },
+      "contact_info": {
+        "support_phone": "1-800-555-1234",
+        "support_email": "support@example.com",
+        "hours": "Mon-Fri 8am-6pm EST"
+      },
+      "estimated_resolution_date": null
+    },
+    "metadata": {
+      "agent_name": "Customer Resolution Agent",
+      "timestamp": "2024-06-28T12:00:00Z"
+    }
+  }
+}

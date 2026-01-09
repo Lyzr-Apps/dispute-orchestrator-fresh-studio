@@ -1,0 +1,183 @@
+{
+  "workflow_name": "Credit Card Dispute Analysis Management System",
+  "description": "Hybrid workflow system combining independent agents and manager-subagent coordination for credit card dispute analysis",
+  "nodes": [
+    {
+      "id": "input_node",
+      "type": "Input",
+      "label": "Customer Input",
+      "nodeCategory": "input",
+      "position": {"x": 100, "y": 300}
+    },
+    {
+      "id": "customer_conversation_agent",
+      "type": "Agent",
+      "label": "Customer Conversation Agent",
+      "nodeCategory": "agent",
+      "agent_id": "696147c7c57d451439d4cd48",
+      "agent_type": "independent",
+      "position": {"x": 350, "y": 300}
+    },
+    {
+      "id": "dispute_analysis_orchestrator",
+      "type": "Agent",
+      "label": "Dispute Analysis Orchestrator",
+      "nodeCategory": "agent",
+      "agent_id": "69614847d09b55236334454d",
+      "agent_type": "manager",
+      "managed_agents": [
+        "696147dfd09b552363344543",
+        "696147f4d09b552363344544",
+        "6961480bd09b552363344546"
+      ],
+      "position": {"x": 650, "y": 300}
+    },
+    {
+      "id": "sql_query_agent",
+      "type": "Agent",
+      "label": "SQL Query Agent",
+      "nodeCategory": "agent",
+      "agent_id": "696147dfd09b552363344543",
+      "agent_type": "sub-agent",
+      "position": {"x": 500, "y": 500}
+    },
+    {
+      "id": "sop_compliance_agent",
+      "type": "Agent",
+      "label": "SOP Compliance Agent",
+      "nodeCategory": "agent",
+      "agent_id": "696147f4d09b552363344544",
+      "agent_type": "sub-agent",
+      "position": {"x": 650, "y": 500}
+    },
+    {
+      "id": "decision_synthesis_agent",
+      "type": "Agent",
+      "label": "Decision Synthesis Agent",
+      "nodeCategory": "agent",
+      "agent_id": "6961480bd09b552363344546",
+      "agent_type": "sub-agent",
+      "position": {"x": 800, "y": 500}
+    },
+    {
+      "id": "customer_resolution_agent",
+      "type": "Agent",
+      "label": "Customer Resolution Agent",
+      "nodeCategory": "agent",
+      "agent_id": "69614825d09b55236334454c",
+      "agent_type": "independent",
+      "position": {"x": 950, "y": 300}
+    },
+    {
+      "id": "output_node",
+      "type": "Output",
+      "label": "Final Decision Output",
+      "nodeCategory": "end",
+      "position": {"x": 1200, "y": 300}
+    }
+  ],
+  "edges": [
+    {
+      "source": "input_node",
+      "target": "customer_conversation_agent",
+      "label": "Start Dispute"
+    },
+    {
+      "source": "customer_conversation_agent",
+      "target": "dispute_analysis_orchestrator",
+      "label": "Submit for Analysis"
+    },
+    {
+      "source": "dispute_analysis_orchestrator",
+      "target": "sql_query_agent",
+      "label": "Query Transaction Data"
+    },
+    {
+      "source": "dispute_analysis_orchestrator",
+      "target": "sop_compliance_agent",
+      "label": "Check SOP Compliance"
+    },
+    {
+      "source": "dispute_analysis_orchestrator",
+      "target": "decision_synthesis_agent",
+      "label": "Synthesize Decision"
+    },
+    {
+      "source": "dispute_analysis_orchestrator",
+      "target": "customer_resolution_agent",
+      "label": "Send Decision Package"
+    },
+    {
+      "source": "customer_resolution_agent",
+      "target": "output_node",
+      "label": "View Decision"
+    }
+  ],
+  "agents": [
+    {
+      "agent_id": "696147c7c57d451439d4cd48",
+      "name": "Customer Conversation Agent",
+      "type": "independent",
+      "description": "Conducts empathetic conversational interview with customer to understand dispute details",
+      "provider": "OpenAI",
+      "model": "gpt-4.1",
+      "temperature": 0.5,
+      "top_p": 0.95
+    },
+    {
+      "agent_id": "696147dfd09b552363344543",
+      "name": "SQL Query Agent",
+      "type": "sub-agent",
+      "description": "Converts case details into optimized SQL queries and retrieves transaction data",
+      "provider": "OpenAI",
+      "model": "gpt-4.1",
+      "temperature": 0.2,
+      "top_p": 1
+    },
+    {
+      "agent_id": "696147f4d09b552363344544",
+      "name": "SOP Compliance Agent",
+      "type": "sub-agent",
+      "description": "Searches SOP knowledge base to identify applicable dispute policies",
+      "provider": "OpenAI",
+      "model": "gpt-4.1",
+      "temperature": 0.2,
+      "top_p": 1
+    },
+    {
+      "agent_id": "6961480bd09b552363344546",
+      "name": "Decision Synthesis Agent",
+      "type": "sub-agent",
+      "description": "Analyzes transaction data against SOP requirements to formulate final decision",
+      "provider": "OpenAI",
+      "model": "gpt-4.1",
+      "temperature": 0.3,
+      "top_p": 1
+    },
+    {
+      "agent_id": "69614825d09b55236334454c",
+      "name": "Customer Resolution Agent",
+      "type": "independent",
+      "description": "Presents final dispute decision to customer in empathetic language",
+      "provider": "OpenAI",
+      "model": "gpt-4.1",
+      "temperature": 0.5,
+      "top_p": 0.95
+    },
+    {
+      "agent_id": "69614847d09b55236334454d",
+      "name": "Dispute Analysis Orchestrator",
+      "type": "manager",
+      "description": "Coordinates dispute analysis workflow and aggregates findings",
+      "provider": "OpenAI",
+      "model": "gpt-4.1",
+      "temperature": 0.3,
+      "top_p": 1,
+      "managed_agents": [
+        "696147dfd09b552363344543",
+        "696147f4d09b552363344544",
+        "6961480bd09b552363344546"
+      ]
+    }
+  ]
+}

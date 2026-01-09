@@ -1,0 +1,146 @@
+{
+  "agent_name": "SOP Compliance Agent",
+  "agent_id": "696147f4d09b552363344544",
+  "agent_purpose": "research",
+  "description": "Searches SOP knowledge base for applicable dispute policies and compliance rules",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "applicable_policies": [
+        {
+          "policy_id": "string",
+          "policy_name": "string",
+          "description": "string",
+          "applies_because": "string"
+        }
+      ],
+      "compliance_rules": [
+        {
+          "rule_id": "string",
+          "rule_description": "string",
+          "threshold": "string",
+          "current_case_status": "string"
+        }
+      ],
+      "approval_criteria": {
+        "auto_approve_conditions": [
+          "string"
+        ],
+        "auto_deny_conditions": [
+          "string"
+        ],
+        "manual_review_conditions": [
+          "string"
+        ]
+      },
+      "policy_citations": [
+        "string"
+      ],
+      "recommendation": "string",
+      "confidence": "number"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "applicable_policies": [
+        {
+          "policy_id": "POL-3201",
+          "policy_name": "Unauthorized Transaction Dispute Policy",
+          "description": "Governs handling of disputes related to transactions the cardholder claims they did not authorize.",
+          "applies_because": "Sample research involves a test of common dispute types; unauthorized transaction is a primary use case for standard operating procedures testing."
+        }
+      ],
+      "compliance_rules": [
+        {
+          "rule_id": "RULE-003",
+          "rule_description": "Cardholder must provide affirmation of non-authorization for disputed transaction.",
+          "threshold": "Written or verbal affidavit required within 15 days of claim initiation.",
+          "current_case_status": "review_required"
+        },
+        {
+          "rule_id": "RULE-005",
+          "rule_description": "Transaction must be reported within 60 days of statement issuance.",
+          "threshold": "60 days from statement date.",
+          "current_case_status": "review_required"
+        }
+      ],
+      "approval_criteria": {
+        "auto_approve_conditions": [
+          "Affidavit of non-authorization received and transaction reported within 60 days of statement."
+        ],
+        "auto_deny_conditions": [
+          "Cardholder cannot provide affirmation OR dispute reported after 60-day window."
+        ],
+        "manual_review_conditions": [
+          "Ambiguous transaction history or partial cardholder documentation."
+        ]
+      },
+      "policy_citations": [
+        "Section 2.3.1 of POL-3201: Affidavit Requirements",
+        "Section 2.4.2 of POL-3201: Timely Filing of Disputes"
+      ],
+      "recommendation": "escalate",
+      "confidence": 0.9
+    },
+    "metadata": {
+      "agent_name": "SOP Compliance Agent",
+      "timestamp": "2024-06-13T21:12:45Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-01-09T18:30:35.528115",
+  "test_message_used": "Research a sample topic for testing",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "applicable_policies": [
+        {
+          "policy_id": "POL-3201",
+          "policy_name": "Unauthorized Transaction Dispute Policy",
+          "description": "Governs handling of disputes related to transactions the cardholder claims they did not authorize.",
+          "applies_because": "Sample research involves a test of common dispute types; unauthorized transaction is a primary use case for standard operating procedures testing."
+        }
+      ],
+      "compliance_rules": [
+        {
+          "rule_id": "RULE-003",
+          "rule_description": "Cardholder must provide affirmation of non-authorization for disputed transaction.",
+          "threshold": "Written or verbal affidavit required within 15 days of claim initiation.",
+          "current_case_status": "review_required"
+        },
+        {
+          "rule_id": "RULE-005",
+          "rule_description": "Transaction must be reported within 60 days of statement issuance.",
+          "threshold": "60 days from statement date.",
+          "current_case_status": "review_required"
+        }
+      ],
+      "approval_criteria": {
+        "auto_approve_conditions": [
+          "Affidavit of non-authorization received and transaction reported within 60 days of statement."
+        ],
+        "auto_deny_conditions": [
+          "Cardholder cannot provide affirmation OR dispute reported after 60-day window."
+        ],
+        "manual_review_conditions": [
+          "Ambiguous transaction history or partial cardholder documentation."
+        ]
+      },
+      "policy_citations": [
+        "Section 2.3.1 of POL-3201: Affidavit Requirements",
+        "Section 2.4.2 of POL-3201: Timely Filing of Disputes"
+      ],
+      "recommendation": "escalate",
+      "confidence": 0.9
+    },
+    "metadata": {
+      "agent_name": "SOP Compliance Agent",
+      "timestamp": "2024-06-13T21:12:45Z"
+    }
+  }
+}

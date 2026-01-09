@@ -1,0 +1,82 @@
+{
+  "agent_name": "SOP Compliance Agent",
+  "agent_id": "696147f4d09b552363344544",
+  "test_message": "Find compliance policies for unauthorized transaction disputes, e-commerce merchants, amount under $500",
+  "expected_purpose": "research",
+  "timestamp": "2026-01-09T18:28:34.282691",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "applicable_policies": [
+        {
+          "policy_id": "CCDISP-004",
+          "policy_name": "Unauthorized Transaction Dispute Handling",
+          "description": "Outlines standard procedures for handling unauthorized transaction disputes, including customer notification, investigation protocols, and timelines.",
+          "applies_because": "Dispute type is unauthorized transaction."
+        },
+        {
+          "policy_id": "E-COM-101",
+          "policy_name": "E-commerce Merchant Dispute Guidelines",
+          "description": "Policy outlining specific compliance requirements and investigative steps for transactions conducted with online merchants.",
+          "applies_because": "Merchant is classified as e-commerce."
+        },
+        {
+          "policy_id": "AMT-500LIM",
+          "policy_name": "Low-Value Dispute Fast-Track",
+          "description": "Establishes expedited procedures and reduced documentation requirements for disputes involving amounts under $500.",
+          "applies_because": "Transaction amount is below $500."
+        }
+      ],
+      "compliance_rules": [
+        {
+          "rule_id": "R-UNAUTH-01",
+          "rule_description": "Customer affirmation of no authorization for the transaction must be documented.",
+          "threshold": "Affidavit or written confirmation required",
+          "current_case_status": "review_required"
+        },
+        {
+          "rule_id": "R-E-COM-05",
+          "rule_description": "System must verify e-commerce merchant classification in dispute tracker.",
+          "threshold": "Merchant MCC in accepted e-commerce codes list",
+          "current_case_status": "compliant"
+        },
+        {
+          "rule_id": "R-FAST-500-02",
+          "rule_description": "If amount disputed is under $500, case is eligible for low-value expedited workflow.",
+          "threshold": "$500 or less",
+          "current_case_status": "compliant"
+        }
+      ],
+      "approval_criteria": {
+        "auto_approve_conditions": [
+          "Affidavit received and matches customer signature on file",
+          "No evidence of customer participation in transaction",
+          "Merchant is confirmed as e-commerce by MCC"
+        ],
+        "auto_deny_conditions": [
+          "Evidence customer authorized transaction (e.g., OTP, shipping match)",
+          "Affidavit or affirmation not provided after request"
+        ],
+        "manual_review_conditions": [
+          "Affidavit affirmation is unclear or inconsistent",
+          "Potential chargeback abuse patterns or repeat disputes"
+        ]
+      },
+      "policy_citations": [
+        "CCDISP-004 \u00a72.1, \u00a73.4",
+        "E-COM-101 \u00a71.2, \u00a72.9",
+        "AMT-500LIM \u00a74.1",
+        "Card Network Rules: Reg Z \u00a71005.11(b), MasterCard Chargeback Guide 3.3.2"
+      ],
+      "recommendation": "escalate",
+      "confidence": 0.95
+    },
+    "metadata": {
+      "agent_name": "SOP Compliance Agent",
+      "timestamp": "2024-06-11T18:43:32Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"applicable_policies\": [\n      {\n        \"policy_id\": \"CCDISP-004\",\n        \"policy_name\": \"Unauthorized Transaction Dispute Handling\",\n        \"description\": \"Outlines standard procedures for handling unauthorized transaction disputes, including customer notification, investigation protocols, and timelines.\",\n        \"applies_because\": \"Dispute type is unauthorized transaction.\"\n      },\n      {\n        \"policy_id\": \"E-COM-101\",\n        \"policy_name\": \"E-commerce Merchant Dispute Guidelines\",\n        \"description\": \"Policy outlining specific compliance requirements and investigative steps for transactions conducted with online merchants.\",\n        \"applies_because\": \"Merchant is classified as e-commerce.\"\n      },\n      {\n        \"policy_id\": \"AMT-500LIM\",\n        \"policy_name\": \"Low-Value Dispute Fast-Track\",\n        \"description\": \"Establishes expedited procedures and reduced documentation requirements for disputes involving amounts under $500.\",\n        \"applies_because\": \"Transaction amount is below $500.\"\n      }\n    ],\n    \"compliance_rules\": [\n      {\n        \"rule_id\": \"R-UNAUTH-01\",\n        \"rule_description\": \"Customer affirmation of no authorization for the transaction must be documented.\",\n        \"threshold\": \"Affidavit or written confirmation required\",\n        \"current_case_status\": \"review_required\"\n      },\n      {\n        \"rule_id\": \"R-E-COM-05\",\n        \"rule_description\": \"System must verify e-commerce merchant classification in dispute tracker.\",\n        \"threshold\": \"Merchant MCC in accepted e-commerce codes list\",\n        \"current_case_status\": \"compliant\"\n      },\n      {\n        \"rule_id\": \"R-FAST-500-02\",\n        \"rule_description\": \"If amount disputed is under $500, case is eligible for low-value expedited workflow.\",\n        \"threshold\": \"$500 or less\",\n        \"current_case_status\": \"compliant\"\n      }\n    ],\n    \"approval_criteria\": {\n      \"auto_approve_conditions\": [\n        \"Affidavit received and matches customer signature on file\",\n        \"No evidence of customer participation in transaction\",\n        \"Merchant is confirmed as e-commerce by MCC\"\n      ],\n      \"auto_deny_conditions\": [\n        \"Evidence customer authorized transaction (e.g., OTP, shipping match)\",\n        \"Affidavit or affirmation not provided after request\"\n      ],\n      \"manual_review_conditions\": [\n        \"Affidavit affirmation is unclear or inconsistent\",\n        \"Potential chargeback abuse patterns or repeat disputes\"\n      ]\n    },\n    \"policy_citations\": [\n      \"CCDISP-004 \u00a72.1, \u00a73.4\",\n      \"E-COM-101 \u00a71.2, \u00a72.9\",\n      \"AMT-500LIM \u00a74.1\",\n      \"Card Network Rules: Reg Z \u00a71005.11(b), MasterCard Chargeback Guide 3.3.2\"\n    ],\n    \"recommendation\": \"escalate\",\n    \"confidence\": 0.95\n  },\n  \"metadata\": {\n    \"agent_name\": \"SOP Compliance Agent\",\n    \"timestamp\": \"2024-06-11T18:43:32Z\"\n  }\n}"
+}

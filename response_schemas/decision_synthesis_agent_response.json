@@ -1,0 +1,127 @@
+{
+  "agent_name": "Decision Synthesis Agent",
+  "agent_id": "6961480bd09b552363344546",
+  "agent_purpose": "analyzer",
+  "description": "Analyzes data against SOP to formulate dispute decisions",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "final_decision": "string",
+      "decision_confidence": "number",
+      "reasoning": "string",
+      "key_findings": [
+        {
+          "finding": "string",
+          "impact": "string",
+          "weight": "string"
+        }
+      ],
+      "policy_citations": [
+        {
+          "policy_id": "string",
+          "policy_name": "string",
+          "relevance": "string"
+        }
+      ],
+      "supporting_evidence": [
+        "any"
+      ],
+      "risk_factors": [
+        "string"
+      ],
+      "recommended_action": "string",
+      "escalation_reason": "string"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "error",
+    "result": {
+      "final_decision": "escalate",
+      "decision_confidence": 0,
+      "reasoning": "No transaction data, SOP compliance findings, or policy references were provided. Analysis cannot proceed without required input data. As a result, the dispute cannot be validated, approved, or denied at this stage. Escalation is necessary to request the proper supporting documentation.",
+      "key_findings": [
+        {
+          "finding": "Missing transaction data",
+          "impact": "negative",
+          "weight": "high"
+        },
+        {
+          "finding": "No SOP compliance findings submitted",
+          "impact": "negative",
+          "weight": "high"
+        },
+        {
+          "finding": "No relevant policy references available",
+          "impact": "negative",
+          "weight": "high"
+        }
+      ],
+      "policy_citations": [
+        {
+          "policy_id": "GEN-MIN-1",
+          "policy_name": "Minimum Data for Dispute Review",
+          "relevance": "Requires transaction and compliance data for any decision to be rendered."
+        }
+      ],
+      "supporting_evidence": [],
+      "risk_factors": [
+        "Actioning without base transaction or SOP data introduces compliance and operational risk."
+      ],
+      "recommended_action": "Escalate the case and request full transaction data plus related SOP compliance findings before proceeding.",
+      "escalation_reason": "Insufficient data provided for review. Required fields (transaction data, SOP compliance report) are missing."
+    },
+    "metadata": {
+      "agent_name": "Decision Synthesis Agent",
+      "timestamp": "2024-06-15T15:22:34Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-01-09T18:30:45.006348",
+  "test_message_used": "Analyze this sample data for testing",
+  "actual_test_response": {
+    "status": "error",
+    "result": {
+      "final_decision": "escalate",
+      "decision_confidence": 0,
+      "reasoning": "No transaction data, SOP compliance findings, or policy references were provided. Analysis cannot proceed without required input data. As a result, the dispute cannot be validated, approved, or denied at this stage. Escalation is necessary to request the proper supporting documentation.",
+      "key_findings": [
+        {
+          "finding": "Missing transaction data",
+          "impact": "negative",
+          "weight": "high"
+        },
+        {
+          "finding": "No SOP compliance findings submitted",
+          "impact": "negative",
+          "weight": "high"
+        },
+        {
+          "finding": "No relevant policy references available",
+          "impact": "negative",
+          "weight": "high"
+        }
+      ],
+      "policy_citations": [
+        {
+          "policy_id": "GEN-MIN-1",
+          "policy_name": "Minimum Data for Dispute Review",
+          "relevance": "Requires transaction and compliance data for any decision to be rendered."
+        }
+      ],
+      "supporting_evidence": [],
+      "risk_factors": [
+        "Actioning without base transaction or SOP data introduces compliance and operational risk."
+      ],
+      "recommended_action": "Escalate the case and request full transaction data plus related SOP compliance findings before proceeding.",
+      "escalation_reason": "Insufficient data provided for review. Required fields (transaction data, SOP compliance report) are missing."
+    },
+    "metadata": {
+      "agent_name": "Decision Synthesis Agent",
+      "timestamp": "2024-06-15T15:22:34Z"
+    }
+  }
+}

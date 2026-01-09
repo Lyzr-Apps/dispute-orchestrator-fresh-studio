@@ -1,0 +1,30 @@
+{
+  "agent_name": "Customer Conversation Agent",
+  "agent_id": "696147c7c57d451439d4cd48",
+  "test_message": "I want to dispute a charge of $247.99 from TechStore Online that appeared on my card yesterday. I never made this purchase and don't recognize this merchant.",
+  "expected_purpose": "assistant",
+  "timestamp": "2026-01-09T18:28:08.605609",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "case_summary": "The customer is disputing a charge of $247.99 from TechStore Online that appeared on their card yesterday. The customer states they did not make this purchase and do not recognize the merchant, suggesting the transaction may be unauthorized.",
+      "transaction_details": {
+        "date": "yesterday",
+        "amount": 247.99,
+        "merchant": "TechStore Online",
+        "description": "Unrecognized charge from TechStore Online"
+      },
+      "dispute_reason": "unauthorized",
+      "supporting_context": "The customer reports never making a purchase from this merchant and does not recognize the transaction. No prior contact with TechStore Online is mentioned, and the customer suspects this may be a fraudulent transaction.",
+      "customer_sentiment": "concerned",
+      "next_steps": "We will initiate an investigation into the unauthorized charge. You may be contacted for further information if necessary. Please monitor your account for any additional suspicious activity and consider updating your card information for added security."
+    },
+    "metadata": {
+      "agent_name": "Customer Conversation Agent",
+      "timestamp": "2024-06-09T23:12:08Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"case_summary\": \"The customer is disputing a charge of $247.99 from TechStore Online that appeared on their card yesterday. The customer states they did not make this purchase and do not recognize the merchant, suggesting the transaction may be unauthorized.\",\n    \"transaction_details\": {\n      \"date\": \"yesterday\",\n      \"amount\": 247.99,\n      \"merchant\": \"TechStore Online\",\n      \"description\": \"Unrecognized charge from TechStore Online\"\n    },\n    \"dispute_reason\": \"unauthorized\",\n    \"supporting_context\": \"The customer reports never making a purchase from this merchant and does not recognize the transaction. No prior contact with TechStore Online is mentioned, and the customer suspects this may be a fraudulent transaction.\",\n    \"customer_sentiment\": \"concerned\",\n    \"next_steps\": \"We will initiate an investigation into the unauthorized charge. You may be contacted for further information if necessary. Please monitor your account for any additional suspicious activity and consider updating your card information for added security.\"\n  },\n  \"metadata\": {\n    \"agent_name\": \"Customer Conversation Agent\",\n    \"timestamp\": \"2024-06-09T23:12:08Z\"\n  }\n}"
+}
